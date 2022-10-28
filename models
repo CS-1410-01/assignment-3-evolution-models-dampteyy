@@ -1,0 +1,82 @@
+import java.util.Scanner;
+     interface  Face
+     
+     {
+        public void Die();
+        public void Reproduce();
+        public void changeName();
+     }
+   
+
+
+
+
+
+
+    class Creature  implements Face
+    {
+        static Scanner in = new Scanner(System.in);
+        public  void Die() 
+        {
+            
+            System.out.println("Do you want to end the life of this creature?");
+
+            String answer = in.nextLine();
+
+
+            if(answer == "Yes")
+            {
+                System.out.println("Your creature has left the world");
+            }
+            else
+            {
+                System.out.println("Your creature lives to see another day");
+            }
+        }
+
+
+
+        public  void Reproduce()
+        {
+           System.out.println("A creature has bee created");
+
+           System.out.println("What would you like to name this creature?");
+
+           String name = in.nextLine();
+
+           System.out.println("The name of your creature is " + name);
+
+
+        }
+
+         public void changeName()
+         {
+                
+            System.out.println("Would you like to change the name of your creature?");
+
+            String newString = in.nextLine();
+
+            System.out.println("Your creature's new name is " + newString);
+         }
+
+       
+
+    }
+
+
+public class Models {
+
+// I changed a few things in my UML diagram but i dont think it affects the code too much
+    public static void main(String args[]){
+
+
+        Creature c = new Creature();
+
+        c.Reproduce();
+
+    
+
+
+    }
+
+}
